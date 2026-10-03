@@ -1,3 +1,5 @@
-# Temporary files for this practice only.
+# Temporary cache directory
 /.cache/
+
+# Temporary report directory - used for prepare data for .pdf or .docx reports
 /.report/

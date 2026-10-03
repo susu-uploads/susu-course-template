@@ -4,25 +4,25 @@
 
 This template provides the structure for one course for one academic year. Read `COURSE.md` and the relevant `TASK.md` before changing course materials. Keep these instructions about repository operations; place course content in the exported cards.
 
-| File or directory | Purpose |
-|---|---|
-| `README.md` | Repository entry point and course title. |
-| `COURSE.md` | Course page export, including source metadata, descriptions, sections, and links to course elements. |
-| `AGENTS.md` | Instructions for agents maintaining the repository. |
-| `lecture/` | Collection of numbered lecture directories. |
-| `lecture/lecture-<number>-<english-title>/` | One or more original files for a lecture. |
-| `practice/` | Collection of numbered assignment directories. |
-| `practice/practice-<number>-<english-title>/` | An assignment card, its original attachments, and any existing solution artifacts. |
-| `TASK.md` | Assignment source information and the description exported from LMS. Required in every practice directory. |
-| `library/` | Optional directory for additional books or reference files supplied by the source. |
-| `LIBRARY.md` | Bibliography table of reference names and source links at the repository root. |
-| Source attachments | Original teaching materials downloaded from LMS; preserve their names and contents unless a change is requested. |
-| Solution artifacts | User-authored files associated with a practice; preserve them when refreshing an export. |
-| `.cache/` | Temporary caches inside the relevant practice directory. |
-| `.report/` | Temporary report files and images inside the relevant practice directory. |
-| `.gitignore` | Rules excluding local and generated files from Git. |
-| `.gitattributes` | File attributes, including the Git LFS tracking rules. |
-| `.gitkeep` | Placeholder that keeps an empty example lecture directory in Git; remove it once materials are added. |
+| File or directory                             | Purpose                                                                                                          |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `README.md`                                   | Repository entry point and course title.                                                                         |
+| `COURSE.md`                                   | Course page export, including source metadata, descriptions, sections, and links to course elements.             |
+| `AGENTS.md`                                   | Instructions for agents maintaining the repository.                                                              |
+| `lecture/`                                    | Collection of numbered lecture directories.                                                                      |
+| `lecture/lecture-<number>-<english-title>/`   | One or more original files for a lecture.                                                                        |
+| `practice/`                                   | Collection of numbered assignment directories.                                                                   |
+| `practice/practice-<number>-<english-title>/` | An assignment card, its original attachments, and any existing solution artifacts.                               |
+| `TASK.md`                                     | Assignment metadata followed by the description exported from LMS. Required in every practice directory.         |
+| `library/`                                    | Optional directory for additional books or reference files supplied by the source.                               |
+| `LIBRARY.md`                                  | Bibliography table of reference names and source links at the repository root.                                   |
+| Source attachments                            | Original teaching materials downloaded from LMS; preserve their names and contents unless a change is requested. |
+| Solution artifacts                            | User-authored files associated with a practice; preserve them when refreshing an export.                         |
+| `.cache/`                                     | Temporary caches inside the relevant practice directory.                                                         |
+| `.report/`                                    | Temporary report files and images inside the relevant practice directory.                                        |
+| `.gitignore`                                  | Rules excluding local and generated files from Git.                                                              |
+| `.gitattributes`                              | File attributes, including the Git LFS tracking rules.                                                           |
+| `.gitkeep`                                    | Placeholder that keeps an empty example lecture directory in Git; remove it once materials are added.            |
 
 Naming and placement rules:
 
@@ -39,19 +39,19 @@ Naming and placement rules:
 
 Start every `COURSE.md` and `TASK.md` with YAML frontmatter delimited by `---`. Use exactly four string fields:
 
-| Field | Meaning |
-|---|---|
-| `ru` | Russian name of the course or assignment. |
-| `en` | English translation of that name. |
-| `code` | Approved course directory name for a course card, or the containing practice directory name for an assignment card. |
-| `origin` | Canonical LMS URL of the exported course page or assignment. |
+| Field    | Meaning                                                                                                             |
+|----------|---------------------------------------------------------------------------------------------------------------------|
+| `ru`     | Russian name of the course or assignment.                                                                           |
+| `en`     | English translation of that name.                                                                                   |
+| `code`   | Approved course directory name for a course card, or the containing practice directory name for an assignment card. |
+| `origin` | Canonical LMS URL of the exported course page or assignment.                                                        |
 
 - Preserve already confirmed metadata values. Translate names for `en` and directory naming; retain the source language in exported descriptions.
 - Empty strings are placeholders in the template only. Fill every field from confirmed source data when creating a course; keep `code` equal to the actual course or practice directory name.
 - Copy educational text completely and in source order. Convert HTML to readable Markdown while preserving paragraphs, lists, emphasis, and working links.
 - Do not paraphrase, correct grammar, change formulas, or rewrite assessment criteria from the source.
 - Export course descriptions, section headings, and course element names with their links. Exclude navigation controls and completion indicators.
-- Every assignment card must include a source section. Include an assignment section only when the LMS card contains an assignment description; do not invent missing instructions.
+- After frontmatter, `TASK.md` contains only the assignment description exported from LMS, including its original headings, assessment criteria, and links. Source identification belongs in the metadata; do not add fixed sections or duplicate it in a separate source section. If the source has no description, leave the body empty.
 - Refresh only the requested exported cards. Preserve original attachments, solution artifacts, unrelated user edits, and directory names.
 - Exclude personal grades, submitted answers, feedback, comments, and completion status from the exported cards.
 - Keep authentication cookies, session identifiers, tokens, and hidden form fields out of repository files and logs.
